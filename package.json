@@ -1,0 +1,18 @@
+{
+  "name": "estudo-es",
+  "version": "1.0.0",
+  "description": "Estudando ElasticSearch",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon src/server.js"
+  },
+  "author": "Douglas Andrade",
+  "license": "ISC",
+  "dependencies": {
+    "@elastic/elasticsearch": "^7.16.0",
+    "axios": "^0.25.0",
+    "elasticsearch": "^16.7.2",
+    "express": "^4.17.2"
+  }
+}
