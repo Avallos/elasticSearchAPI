@@ -1,5 +1,7 @@
 const { apiRequest } = require('../client/apiRequest');
 
+
+//Função utilizada para recuperar dados sobre os pokemons da API
 async function getPokemons(){
     const listPokemonsDetails = []
     const response = await apiRequest('get', 'https://pokeapi.co/api/v2/pokemon?offset=10&limit=100')

@@ -51,5 +51,29 @@ async function getPokemonById(req, res){
     
 }
 
+async function getPokemonByRangeBaseExperience(req, res){
 
-module.exports = { deletePokemon, getPokemonByName, getPokemonById }
+    try{
+        const { gte, lte } = req.body
+        const result = await elasticClient.search({
+            body: {
+                query: {
+                    range: {
+                        base_experience:{
+                            gte,
+                            lte
+                        }
+                    }
+                }
+            }
+        })
+        res.send(result.body)
+    }catch(err){
+        res.send(err)
+        console.log(err)
+    }
+    
+}
+
+
+module.exports = { deletePokemon, getPokemonByName, getPokemonById, getPokemonByRangeBaseExperience }
